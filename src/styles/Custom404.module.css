@@ -1,0 +1,79 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #fff 0%, rgba(102, 204, 255, 0.712) 71.2%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gif {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+}
+
+.gif0 {
+  /* 0 means playing, other numbers means stopped */
+  background-image: url("/404/tianyi.gif");
+}
+
+.gif1 {
+  background-image: url("/404/tianyi1.jpg");
+}
+
+.gif2 {
+  background-image: url("/404/tianyi2.jpg");
+}
+
+.gif3 {
+  background-image: url("/404/tianyi3.jpg");
+}
+
+.gif4 {
+  background-image: url("/404/tianyi4.jpg");
+}
+
+.title {
+  font-weight: 400;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+h1.title {
+  margin-top: 36px;
+  font-size: 48px;
+}
+
+h2.title {
+  font-size: 36px;
+}
+
+h3.title {
+  font-size: 24px;
+}
+
+.stop {
+  color: white;
+  cursor: pointer;
+}
+
+.link {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #66ccff;
+  color: #fff;
+  border-bottom: solid 4px #3478c6;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+
+.link:hover {
+  transition: .3s ease-in-out;
+  text-decoration: none;
+  background: #3478c6;
+}
