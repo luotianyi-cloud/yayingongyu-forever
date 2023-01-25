@@ -40,7 +40,7 @@ const songs = [
 ]
 
 export default function Home() {
-  const [cdn, setCDN] = useState('')
+  const [cdn, setCDN] = useState('/static')
   const [poemContent, setPoemContent] = useState<{[name: string]: string}>({})
   const [songLinks, setSongLinks] = useState<{id: Number, name: string}[]>([])
 
