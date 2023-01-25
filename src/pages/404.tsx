@@ -24,6 +24,9 @@ export default function Custom404() {
     <>
       <Head>
         <title>404 Not Found - 雅音宫羽 Forever</title>
+        {[1, 2, 3, 4].map((i) => (
+          <link key={i} rel="preload" href={`/404/tianyi${i}.jpg`} as="image" />
+        ))}
       </Head>
       <main className={style.container}>
         <div className={`${style.gif} ${gifStateClassName(gifState)}`} />
