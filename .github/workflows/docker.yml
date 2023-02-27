@@ -29,7 +29,9 @@ jobs:
         run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
 
       - name: Echo Tag Name
-        run: echo "Tag - ${{ env.SHORT_SHA }}"
+        run: |
+          echo "Tag - ${{ env.SHORT_SHA }}"
+          echo "Variable - NEXT_PUBLIC_CDN_LOCATION=${{ vars.NEXT_PUBLIC_CDN_LOCATION }}"
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -44,10 +46,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ env.USER }}/${{ env.IMAGE }}:${{ env.SHORT_SHA }}
-
-      - name: Build & Push (Latest)
-        uses: docker/build-push-action@v4
-        with:
-          push: true
-          tags: ${{ env.USER }}/${{ env.IMAGE }}:latest
+          tags: |
+            ${{ env.USER }}/${{ env.IMAGE }}:${{ env.SHORT_SHA }}
+            ${{ env.USER }}/${{ env.IMAGE }}:latest
+          build-args: |
+            NEXT_PUBLIC_CDN_LOCATION=${{ vars.NEXT_PUBLIC_CDN_LOCATION }}
