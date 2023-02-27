@@ -1,0 +1,53 @@
+name: Docker
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  USER: yayingongyu
+  IMAGE: cloud.web.yayingongyu-forever
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Get Commit SHA Hash
+        run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+
+      - name: Echo Tag Name
+        run: echo "Tag - ${{ env.SHORT_SHA }}"
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ env.USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build & Push
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: ${{ env.USER }}/${{ env.IMAGE }}:${{ env.SHORT_SHA }}
+
+      - name: Build & Push (Latest)
+        uses: docker/build-push-action@v4
+        with:
+          push: true
+          tags: ${{ env.USER }}/${{ env.IMAGE }}:latest
