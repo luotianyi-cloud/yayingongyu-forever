@@ -22,5 +22,6 @@ npm run export
  * `PORT`: next.js 服务端口，默认为 `3000`。
 
 ## 版权
-此项目以 MIT 协议发布。
+本项目代码部分使用 MIT 许可证，内容部分使用 CC BY-NC-SA 4.0 许可证。内容部分包括：
+ - `public/` 下的所有内容
 
