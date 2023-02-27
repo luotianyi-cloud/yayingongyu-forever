@@ -15,9 +15,6 @@ npm run build
 npm run export
 ```
 
-## 部署
-此项目通过 [Vercel](https://vercel.com) 自动化部署。
-
 ## 环境变量
 
  * `STATIC_MODE`: 是否为静态构建，影响的是是否开启 Next.js 的图像优化。取值范围 `false` 或 `true`，默认为 `false`。
@@ -25,3 +22,4 @@ npm run export
 
 ## 版权
 此项目以 MIT 协议发布。
+

@@ -18,6 +18,9 @@ export default function Footer() {
           <a href="https://opensource.org/licenses/MIT" rel="license noreferrer" target="_blank">MIT</a>
         </li>
         <li>
+          <a href="https://github.com/luotianyi-cloud/yayingongyu-forever" rel="noreferrer" target="_blank">GitHub</a>
+        </li>
+        <li>
           Contact: <a href="mailto:yayingongyu@lty.name">yayingongyu@lty.name</a>
         </li>
       </ul>

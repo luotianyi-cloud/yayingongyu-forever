@@ -55,7 +55,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>雅音宮羽 Forever</title>
+        <title>「雅音宫羽」纪念网站</title>
+        <meta name="description" content="你是全世界的洛天依 却只是我一人的雅音宫羽" />
       </Head>
       <main className={style.background} onClick={() => { document.querySelector('audio')?.play() }}>
         <article className={style.container}>
