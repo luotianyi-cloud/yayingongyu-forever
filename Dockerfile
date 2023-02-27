@@ -5,5 +5,6 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV STATIC_MODE=false
 ENV PORT=80
-RUN npm i && npm run lint && npm run build
+RUN apk update && apk add curl && \
+	npm i && npm run lint && npm run build
 CMD ["npm", "start"]
